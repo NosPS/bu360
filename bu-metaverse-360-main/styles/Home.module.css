@@ -1,0 +1,54 @@
+.background
+{
+  background: url('/images/bg.png') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.socialbar
+{
+  position: absolute;
+  width: 100%;
+  padding: 20px 0 0 20px;
+}
+
+.socialbtn
+{
+  margin: 0 0 0 10px;
+  cursor: pointer;
+}
+
+.buttonlist
+{
+  position: absolute;
+  bottom: 10em;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.btngetstart
+{
+  background: none;
+  padding: 15px 40px;
+  font-size: 2em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  border: 3px solid white;
+}
+
+.loginbox {
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.83);
+  -webkit-box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.83);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.83);
+}
+
+.inputitem {
+  margin-top: 20px;
+}

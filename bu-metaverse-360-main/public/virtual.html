@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover"> -->
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" href="/js/tour-player.css">
+    <link rel="stylesheet" href="/assets/gallery.css">
+    <link rel="stylesheet" href="/assets/queue.css">
+    <script src="/js/tour-player.js"></script>
+    <script src="/assets/gallery.js"></script>
+    <script src="/assets/profile.js"></script>
+
+    <title>Metaverse</title>
+    <style>
+        #markers .button.info{
+            background-color: #06f;
+        }
+    </style>
+</head>
+    <body>
+        <div class="sfx-layout">
+            <audio id="marker"><source src="sounds/marker.wav" type="audio/wav"></audio>
+        </div>
+
+        <div class="bgm-layout">
+            <audio id="design"><source src="bgm/design.mp3" type="audio/mp3"></audio>
+            <audio id="biz"><source src="bgm/biz.mp3" type="audio/mp3"></audio>
+            <audio id="film"><source src="bgm/film.mp3" type="audio/mp3"></audio>
+            <audio id="media"><source src="bgm/media.mp3" type="audio/mp3"></audio>
+            <audio id="tech"><source src="bgm/tech.wav" type="audio/wav"></audio>
+            <audio id="world"><source src="bgm/world.wav" type="audio/wav"></audio>
+            <audio id="inter"><source src="bgm/inter.mp3" type="audio/mp3"></audio>
+        </div>
+
+        <input type="hidden" id="current-slide">
+        <div id="modal-gallery" class="gallery">
+            <div class="gallery-content">
+                <span class="gallery-close" onclick="closeModal()">&times;</span>
+                <div class="gallery-header"><img src="images/popup/head.png" height="150" alt=""></div>
+                <div class="slide-overlay">
+                    <div class="slide-btn">
+                        <img class="prev" src="images/popup/prev.png" height="30" onclick="plusSlide(-1)" />
+                        <img class="next" src="images/popup/next.png" height="30" onclick="plusSlide(1)" />
+                    </div>
+
+                    <div id="product3-slide" class="gallery-slide">
+                        <img class='img-slide' src="images/gallery/0-1.jpg" alt="" loading="lazy">
+                        <img class='img-slide' src="images/gallery/0-2.jpg" alt="" loading="lazy">
+                        <img class='img-slide' src="images/gallery/0-3.jpg" alt="" loading="lazy">
+                    </div>
+
+                    <div id="product2-slide" class="gallery-video">
+                        <!-- <img class="img-slide" src="images/gallery/0-1.jpg" alt="" loading="lazy">
+                        <img class="img-slide" src="images/gallery/0-2.jpg" alt="" loading="lazy">
+                        <img class="img-slide" src="images/gallery/0-3.jpg" alt="" loading="lazy"> -->
+
+                        <video controls autoplay>
+                            <source src="videos/point1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="gallery-slide" id="product1-slide">
+                        <img class="img-slide" src="images/gallery/3-1.jpg" alt="">
+                        <img class="img-slide" src="images/gallery/3-2.jpg" alt="">
+                        <img class="img-slide" src="images/gallery/3-3.jpg" alt="">
+                        <img class="img-slide" src="images/gallery/3-4.jpg" alt="">
+                        <img class="img-slide" src="images/gallery/3-5.jpg" alt="">
+                    </div>
+                    <div class="gallery-slide" id="product0-slide">
+                        <img class="img-slide" src="images/gallery/4-1.jpg" alt="">
+                        <img class="img-slide" src="images/gallery/4-2.jpg" alt="">
+                        <img class="img-slide" src="images/gallery/4-3.jpg" alt="">
+                        <img class="img-slide" src="images/gallery/4-5.jpg" alt="">
+                        <img class="img-slide" src="images/gallery/4-6.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" id="current-queue">
+        <div id="modal-queue" class="queue">
+            <div class="queue-content">
+                <span class="queue-close" onclick="closeQueue()">&times;</span>
+                <div class="queue-overlay">
+                    <div class="queue-header"><img src="images/tab_signup.png" height="50" alt="" /></div>
+                    <div class="username">username: <span id='username'></span></div>
+                    <div class="table">
+                        <div class="table-content">
+                            <div class="table-row">
+                                <div class="table-cell">Biztown 1</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">10.00-11.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">11.00-12.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">11.00-12.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">11.00-12.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">11.00-12.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                        </div>
+                        <div class="table-content">
+                            <div class="table-row">
+                                <div class="table-cell">Biztown 2</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">10.00-11.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">11.00-12.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">11.00-12.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">11.00-12.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">11.00-12.00</div>
+                                <div class="table-cell">0/50</div>
+                                <div class="table-cell"><button>Reserve</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <input type="button" id="product0" onclick="openModal('product0-slide')" style="display: none;">
+        <input type="button" id="product1" onclick="openModal('product1-slide')" style="display: none;">
+        <input type="button" id="product2" onclick="openModal('product2-slide')" style="display: none;">
+        <input type="button" id="product3" onclick="openQueue()" style="display: none;">
+        <!-- <input type="button" id="product3" onclick="openModal('product3-slide')" style="display: none;"> -->
+
+        
+        <script>
+          Tour.init(false, {
+              iFrameScaleControl: false,
+              controlPanel: true,
+              gallery: false,
+              galleryVisible: false,
+              cursor: false,
+              mouseMenu: false,
+            //   mainifest: '/api/manifest'
+              mainifest: 'manifest.json'
+          });
+
+          Tour.on('load', function(data) {
+              //this.controls.autoRotate()
+          })
+        </script>
+    </body>
+</html>
